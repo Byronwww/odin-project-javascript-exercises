@@ -12,5 +12,8 @@ const reverseString = function(stringToReverse) {
     return reversedString;
 };
 
+//Based on the readme text, I think the exercise expected it to be solved by splitting it into an array 
+//and then using a reverse sort on the array but I prefer this method of just reading the string backwards
+
 // Do not edit below this line
 module.exports = reverseString;
