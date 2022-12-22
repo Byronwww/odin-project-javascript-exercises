@@ -1,6 +1,6 @@
 //This sends an array (items) plus an array of arguments (itemsToRemove)
 //which need to be filtered out of the items array
-const removeFromArray = function(items, itemsToRemove) {
+const removeFromArray = function(items, ...itemsToRemove) {
 
 
 // This is the function that actually does the filtering
@@ -12,7 +12,13 @@ function filterItems(filterThis){
     console.log("Items: "+ items);
     console.log("Items to Remove: "+ itemsToRemove);
     
-    return filterThis !== itemsToRemove; 
+
+    for (i = 0; i <= itemsToRemove.length; i++) {
+        console.log("i value is: "+ i);
+        var itemsToRemoveResult = itemsToRemove[0];
+        console.log("itemsToRemoveResult: " + itemsToRemoveResult);        
+    }
+    return filterThis !== itemsToRemoveResult;     
 }
 
 //This returns the filtered array by first calling a function called filterItems 
@@ -21,9 +27,12 @@ return items.filter(filterItems)
 };
 
 
-
 // Do not edit below this line
 module.exports = removeFromArray;
 
 
 
+//const charactersWithMassMoreThan100 = characters.filter (character =>{
+//    return character.mass > 100;    
+//})
+//console.log(charactersWithMassMoreThan100);
