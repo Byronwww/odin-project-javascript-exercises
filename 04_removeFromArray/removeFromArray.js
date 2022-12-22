@@ -3,26 +3,28 @@
 const removeFromArray = function(items, ...itemsToRemove) {
 
 
-// This is the function that actually does the filtering
-// I HAVE PROVEN THIS WORKS WITH A HARDCODED SINGLE ITEM REMOVED FROM THE ARRAY 
-// I NOW NEED TO FIGURE OUT HOW TO MAKE itemsToRemove INTO A REST PARAMETER
-//AND THEN GO THROUGH EACH VALUE IN THE itemsToRemove REST PARAMETER AND REMOVE THAT FROM THE LIST
+//This is the function that actually does the filtering
+//I need to check a single value being passed in by the filter method 
+//comparing it against each value in the itemsToRemove rest parameter (which is essentially an array)
 
-function filterItems(filterThis){
-    console.log("Items: "+ items);
-    console.log("Items to Remove: "+ itemsToRemove);
-    
+function filterItems(item){    
 
     for (i = 0; i <= itemsToRemove.length; i++) {
-        console.log("i value is: "+ i);
-        var itemsToRemoveResult = itemsToRemove[0];
-        console.log("itemsToRemoveResult: " + itemsToRemoveResult);        
-    }
-    return filterThis !== itemsToRemoveResult;     
-}
+        if (item === itemsToRemove[i]) return false    
+    }    
+    
+    return true;  
+    }    
+
 
 //This returns the filtered array by first calling a function called filterItems 
 //filterItems is where the filtering actually happens
+
+//here's how the filter method works. For each item in your items, 
+//the filter method will call your function (filterItems in this case), 
+//and if your function returns true, it will keep the item inside the array. 
+//But, if your function returns false, it will remove the item from your array.
+//*Thanks to Rachel Banana on Discord for explaining how the filter works ^
 return items.filter(filterItems)
 };
 
@@ -30,9 +32,3 @@ return items.filter(filterItems)
 // Do not edit below this line
 module.exports = removeFromArray;
 
-
-
-//const charactersWithMassMoreThan100 = characters.filter (character =>{
-//    return character.mass > 100;    
-//})
-//console.log(charactersWithMassMoreThan100);
