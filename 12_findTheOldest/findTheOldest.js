@@ -3,17 +3,26 @@ const findTheOldest = function(input) {
 
 
 const date = new Date();
-let year = date.getFullYear();
-console.log("Current Year: " + year);
+let currentYear = date.getFullYear();
+console.log("Current Year: " + currentYear);
 
 let previousAge = 0;
 let oldestPerson = "";
 let currentAge = "";
+let deathYear = 0;
 
 for (i = 0 ; i < input.length; i++){
     console.log(input[i]);
 
-    currentAge = input[i].yearOfDeath - input[i].yearOfBirth;
+    if (input[i].yearOfDeath > 0){
+        deathYear = input[i].yearOfDeath
+    }
+
+    else{
+        deathYear = currentYear;
+    }
+
+    currentAge = deathYear - input[i].yearOfBirth;
     currentAge = Number(currentAge);
     console.log("Current Age: " + currentAge);
     console.log("Previous Age: " + previousAge);
