@@ -1,34 +1,33 @@
 const sumAll = function(firstNumber, lastNumber) {
+  let finalSum = 0;
 
-var finalSum = 0;
-
-console.log(finalSum);
+  console.log(finalSum);
 
 
-if (typeof firstNumber != "number" || typeof lastNumber != "number"){
-    return "ERROR";
-}
+  if (typeof firstNumber != 'number' || typeof lastNumber != 'number') {
+    return 'ERROR';
+  }
 
-if (firstNumber <0 || lastNumber <0){
-    return "ERROR";
-}
+  if (firstNumber <0 || lastNumber <0) {
+    return 'ERROR';
+  }
 
-//Swap the numbers around to deal with the first number being larger than the last number
-if (firstNumber > lastNumber){
+  // Swap the numbers around to deal with the first number
+  // being larger than the last number
+  if (firstNumber > lastNumber) {
     firstNumberSwap = lastNumber;
-    lastNumberSwap = firstNumber 
-}
-else{
+    lastNumberSwap = firstNumber;
+  } else {
     firstNumberSwap = firstNumber;
     lastNumberSwap = lastNumber;
-}
+  }
 
-    for (i = firstNumberSwap; i<=lastNumberSwap; i++){
-        finalSum = finalSum + i;
-    }
+  for (i = firstNumberSwap; i<=lastNumberSwap; i++) {
+    finalSum = finalSum + i;
+  }
 
-console.log(finalSum);
-return finalSum;
+  console.log(finalSum);
+  return finalSum;
 };
 
 
