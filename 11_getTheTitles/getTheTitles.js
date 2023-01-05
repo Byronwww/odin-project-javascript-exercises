@@ -1,13 +1,11 @@
 const getTheTitles = function(array) {
+  result = [];
 
-    result = [];
+  array.forEach((element) => {
+    result.push(element.title);
+  });
 
-    array.forEach(element => {
-        result.push(element.title);
-    });
-
-    return result;
-
+  return result;
 };
 
 // Do not edit below this line
