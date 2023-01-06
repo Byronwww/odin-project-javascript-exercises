@@ -25,18 +25,18 @@ test('works with large shift factors', () => {
   expect(caesar('e', 75)).toBe('b');
 });
 
-test.skip('works with large shift factors', () => {
+test('works with large shift factors', () => {
   expect(caesar('Hello, World!', 75)).toBe('Ebiil, Tloia!');
 });
 
-test.skip('works with negative shift', () => {
-  expect(caesar('B', -1)).toBe('A');
+test('works with negative shift', () => {
+  expect(caesar('bcc', -1)).toBe('abb');
 });
 
-test.skip('works with negative shift', () => {
+test('works with negative shift', () => {
   expect(caesar('Mjqqt, Btwqi!', -5)).toBe('Hello, World!');
 });
 
-test.skip('works with large negative shift factors', () => {
+test('works with large negative shift factors', () => {
   expect(caesar('Hello, World!', -29)).toBe('Ebiil, Tloia!');
 });
